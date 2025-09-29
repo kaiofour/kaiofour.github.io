@@ -1,83 +1,183 @@
-<link rel="stylesheet" href="./dist/output.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurt Russel Portfolio</title>
+  <link rel="stylesheet" href="./dist/output.css" />
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background-color: #0f172a; /* dark navy */
+      color: #e2e8f0; /* light gray text */
+      display: flex;
+    }
+    /* Sidebar */
+    .sidebar nav {
+      display: flex;
+      flex-direction: column; /* stack links vertically */
+      gap: 12px; /* spacing between links */
+      }
+    .sidebar {
+      width: 220px;
+      background: #1e293b; /* lighter navy */
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .sidebar h2 {
+      color: #38bdf8;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .sidebar p {
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+    .sidebar a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.6rem 0.8rem;
+      color: #cbd5e1;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .sidebar a:hover {
+      background: #334155;
+      color: #38bdf8;
+    }
+    /* Main content */
+    main {
+      margin-left: 220px;
+      padding: 2rem;
+      flex: 1;
+    }
+    .project-card {
+      background: #1e293b;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body class="font-sans">
 
-<h1 class="text-4xl font-bold text-blue-600">Hello Tailwind!</h1>
+  <!-- Sidebar -->
+  <!-- Sidebar -->
+<aside class="sidebar">
+  <div>
+    <h2>Kurt Russel</h2>
+    <p>IT Student</p>
+  </div>
+  <nav class="flex flex-col gap-3 mt-6">
+    <a href="#about"><i class="fa fa-user"></i> About</a>
+    <a href="#projects"><i class="fa fa-code"></i> Projects</a>
+    <a href="#workflow"><i class="fa fa-cogs"></i> Workflow</a>
+    <a href="#contact"><i class="fa fa-envelope"></i> Contact</a>
+  </nav>
+</aside>
 
 
+  <!-- Main content -->
+  <main>
+    <!-- Hero / About -->
+    <header id="about" class="py-16 text-center">
+      <img src="/profile.jpg" alt="Russel Profile Picture" 
+           class="rounded-full object-cover mx-auto shadow-lg" 
+           style="width: 5rem; height: 5rem;" />
+      <h2 class="text-4xl font-bold mt-6 text-white">Hi, I'm Kurt Russel</h2>
+      <p class="mt-2 text-gray-300">3rd Year IT Student · Doomscroller · Clash Royale Addict</p>
+      <p class="italic text-gray-500 mt-1">(I need friends...)</p>
+    </header>
 
-<body class="bg-gray-50 text-gray-900 font-sans">
-  <header class="hero py-12 text-center">
-    <!-- Who I Am -->
-    <img src="/profile.jpg" alt="Russel Profile Picture" class="rounded-full w-32 h-32 object-cover mx-auto" />
-
-    <h2 class="hero-title mt-6">Hi, I'm Kurt Russel </h2>
-    <p class="hero-subtitle">3rd Year IT Student, Doomscroller, Clash Royale Addict</p>
-    <p class="italic text-gray-600">(I need friends...)</p>
-  </header>
-
-  <!-- What I Do -->
-  <section id="projects" class="py-12 px-6 max-w-4xl mx-auto">
-    <h3 class="section-title">What I Do</h3>
-    <div class="grid gap-6 mt-6">
-      
-      <!-- Project 1 -->
-      <div class="project-card">
-        <h4 class="project-title">Supabase and Postman Integration Project IT 3103 Platform Technologies</h4>
-        <p class="project-desc">
-          Expanded on a basic <em>Course Management System</em> by adding advanced platform technologies,
-          including user authentication, role-based access control, serverless functions, monitoring, analytics,
-          and API documentation, all within the Supabase environment and Postman.
-        </p>
-        <p class="project-tech">Tech/Toolkit: Supabase, Postman</p>
+    <!-- Projects -->
+    <section id="projects" class="py-20">
+      <h3 class="text-3xl font-bold text-center text-white">Projects</h3>
+      <p class="text-gray-400 text-center mt-2">Some of the academic and personal works I’ve built.</p>
+      <div class="grid gap-8 mt-10 sm:grid-cols-2">
+        <!-- Gestourage -->
+        <div class="project-card">
+          <h4 class="font-bold text-lg text-white">Gestourage (Admin CRUD Panel)</h4>
+          <p class="mt-2 text-gray-300">An eCommerce admin panel with product management (create, read, update, delete) built using Laravel and PHP.</p>
+          <p class="mt-3 text-sm text-gray-400">Tech: Laravel, PHP, MySQL</p>
+          <a href="https://github.com/kaiofour/Gestourage-Admin-Product-CRUD-Panel" 
+             target="_blank" rel="noopener noreferrer"
+             class="inline-block mt-4 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition">
+            View Repo
+          </a>
+        </div>
+        <!-- FitTrack -->
+        <div class="project-card">
+          <h4 class="font-bold text-lg text-white">FitTrack</h4>
+          <p class="mt-2 text-gray-300">A health & fitness system providing diet and workout recommendations based on user data.</p>
+          <p class="mt-3 text-sm text-gray-400">Tech: PHP, Bootstrap, MySQL</p>
+          <a href="https://github.com/kaiofour/fittrack_final" 
+             target="_blank" rel="noopener noreferrer"
+             class="inline-block mt-4 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition">
+            View Repo
+          </a>
+        </div>
+        <!-- Spotify Clone -->
+        <div class="project-card">
+          <h4 class="font-bold text-lg text-white">Spotify Clone (In Progress)</h4>
+          <p class="mt-2 text-gray-300">A music streaming platform with recreated UI/UX of Spotify’s core features.</p>
+          <p class="mt-3 text-sm text-gray-400">Tech: React Native</p>
+          <a href="https://github.com/kaiofour/IT-5103---Advanced-Mobile" 
+             target="_blank" rel="noopener noreferrer"
+             class="inline-block mt-4 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition">
+            View Repo
+          </a>
+        </div>
+        <!-- MineswOOPer -->
+        <div class="project-card">
+          <h4 class="font-bold text-lg text-white">MineswOOPer</h4>
+          <p class="mt-2 text-gray-300">A full recreation of Minesweeper designed with OOP principles for better structure and reusability.</p>
+          <p class="mt-3 text-sm text-gray-400">Tech: Java</p>
+          <a href="https://github.com/Cheeskaa/MINESWEEPER-GAME" 
+             target="_blank" rel="noopener noreferrer"
+             class="inline-block mt-4 px-4 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition">
+            View Repo
+          </a>
+        </div>
       </div>
+    </section>
 
-      <!-- Project 2 -->
-      <div class="project-card">
-        <h4 class="project-title">MineswOOPer OOP (Object Oriented Programming)</h4>
-        <p class="project-desc">
-          Recreation design of Minesweeper game with structured object-oriented principles.
-        </p>
-        <p class="project-tech">Tech Stack: Java</p>
+    <!-- Workflow -->
+    <section id="workflow" class="py-16">
+      <h3 class="text-2xl font-bold text-center text-white">How I Work</h3>
+      <ul class="list-disc pl-6 space-y-2 mt-6 text-gray-300">
+        <li>Organized workflow with Git/GitHub</li>
+        <li>Strong use of APIs & databases (Supabase, MySQL)</li>
+        <li>Quick learner, adapts to new tech fast</li>
+        <li>Focus on clean UI/UX (Tailwind, Bootstrap, React Native)</li>
+      </ul>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 text-center bg-slate-800 rounded-lg">
+      <h3 class="text-2xl font-bold text-white">Reach Me</h3>
+      <div class="flex justify-center gap-8 mt-6">
+        <a href="mailto:edullanteskurt@gmail.com" target="_blank" rel="noopener noreferrer" class="text-cyan-400 font-semibold hover:underline">Email-</a> 
+        <a href="https://github.com/kaiofour" target="_blank" rel="noopener noreferrer" class="text-cyan-400 font-semibold hover:underline">GitHub-</a>
+        <a href="https://www.linkedin.com/in/kurt-russel-edullantes-carrillo-480524286/" target="_blank" rel="noopener noreferrer" class="text-cyan-400 font-semibold hover:underline">LinkedIn</a>
       </div>
+    </section>
+  </main>
 
-      <!-- Project 3 -->
-      <div class="project-card">
-        <h4 class="project-title">Spotify Clone (In Progress) IT 5103 Advanced Mobile Development</h4>
-        <p class="project-desc">
-          Music streaming platform UI/UX recreation of core features.
-        </p>
-        <p class="project-tech">Tech Stack: React Native</p>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="project-card">
-        <h4 class="project-title">FitTrack CIS 2104 Information Management Final Project</h4>
-        <p class="project-desc">
-          Personal Health & Fitness System diet & workout plan suggestions.
-        </p>
-        <p class="project-tech">Tech Stack: PHP, Bootstrap, HTML, MySQL</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- How I Work -->
-  <section id="workflow" class="py-12 px-6 max-w-4xl mx-auto">
-    <h3 class="section-title">How I Work</h3>
-    <ul class="list-disc pl-6 space-y-2">
-      <li>Organized workflow with version control (Git/GitHub)</li>
-      <li>Strong use of APIs & databases (Supabase, MySQL)</li>
-      <li>Agile learner who adapts to new tech quickly</li>
-      <li>Focused on clean UI/UX with Tailwind, Bootstrap, React Native</li>
-    </ul>
-  </section>
-
-  <!-- Reach Me -->
-  <section id="contact" class="py-12 px-6 text-center">
-    <h3 class="section-title">Reach Me</h3>
-    <div class="socials flex justify-center gap-6 mt-6">
-      <a href="mailto:edullanteskurt@gmail.com" target="_blank" class="social-link">Email</a>
-      <a href="https://github.com/kaiofour" target="_blank" class="social-link">GitHub</a>
-      <a href="https://www.linkedin.com/in/kurt-russel-edullantes-carrillo-480524286/" target="_blank" class="social-link">LinkedIn</a>
-    </div>
-  </section>
 </body>
+</html>
